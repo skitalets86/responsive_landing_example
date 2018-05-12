@@ -10,10 +10,12 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.24.4",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^3.9.1",
     "gulp-pug": "^4.0.1",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^4.0.1",
     "gulp.spritesmith": "^6.9.0",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "run-sequence": "^2.2.1"
   }
 }
