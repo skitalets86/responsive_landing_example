@@ -83,8 +83,8 @@ gulp.task('copy', [
 
 /* Watchers */
 gulp.task('watch', function() {
-    gulp.watch('source/template/**/*.pug', ['templates:compile']);
-    gulp.watch('source/styles/**/*.scss', ['styles:compile']);
+    gulp.watch('src/template/**/*.pug', ['templates:compile']);
+    gulp.watch('src/styles/' + '/**/*.{scss,sass}', ['styles:compile']);
 });
 
 
