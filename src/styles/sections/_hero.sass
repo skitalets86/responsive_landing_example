@@ -1,22 +1,29 @@
 @import ../common/vars
 
 .hero
-    min-height: 59px
+    min-height: 590px
     padding: 174px 0
     text-align: center
     color: #fff
     background-color: #ccc
     background-image: url('../img/hero-bg.jpg')
     background-repeat: no-repeat
-    background-size: center/cover
+    background-size: cover
+
     &__about
         font-family: $ff-main-bold
         font-size: 3rem
         line-height: 1
+
     &__title
         margin-top: 0
         margin-bottom: 27px
         font-family: $ff-main-light
+
+    @media (max-width: 599px)
+        padding: 100px 20px
+        min-height: inherit
+
     .button--text--uppercase
         padding: 21px 41px
         border-radius: 8px

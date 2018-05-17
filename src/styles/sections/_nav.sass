@@ -4,7 +4,12 @@
     display: inline-block
     vertical-align: top
     padding-top: 7px
-    margin-right: 15px
+    margin-left: 165px
+
+    @media (max-width: 1031px)
+        margin-bottom: 25px
+        margin-left: 0
+
     &__link
         display: inline-block
         vertical-align: top
@@ -14,9 +19,16 @@
         text-transform: capitalize
         color: #424242
         transition: 0.3s
-        &:hover
+        font-size: 0.9rem
+
+        &:hover,
         &--active
             color: #de2b24
+
+        @media (max-width: 440px)
+            display: block
+            text-align: center
+
         &:after
             content: ""
             display: inline-block
@@ -26,5 +38,8 @@
             margin-left: 15px
             border-radius: 50%
             background-color: #424242
+
+            @media (max-width: 440px)
+                display: none
         &:last-child:after
             display: none
