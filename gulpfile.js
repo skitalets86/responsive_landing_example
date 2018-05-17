@@ -8,6 +8,8 @@ const autoprefixer = require('gulp-autoprefixer');
 const spritesmith = require('gulp.spritesmith');
 const rimraf = require('rimraf');
 const rename = require('gulp-rename');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
 
 
 /* Server */
@@ -47,6 +49,20 @@ gulp.task('styles:compile', function () {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('build/styles'));
 });
+
+/* JS */
+gulp.task('js', function() {
+    return gulp.src([
+        'src/js/nav.js',
+        'src/js/form.js',
+        'src/js/main.js'
+    ])
+    .pipe(sourcemaps.init())
+    .pipe(concat('main.min.js'))
+    .pipe(uglify())
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest('build/js'));
+})
 
 
 /* Sprite */
@@ -93,6 +109,7 @@ gulp.task('copy', [
 gulp.task('watch', function() {
     gulp.watch('src/template/**/*.pug', ['templates:compile']);
     gulp.watch('src/styles/' + '/**/*.{scss,sass}', ['styles:compile']);
+    gulp.watch('src/js/**/*.js', ['js'])
 });
 
 
@@ -100,7 +117,7 @@ gulp.task('watch', function() {
 gulp.task('default', function () {
     runseq(
         'clean',
-        ['templates:compile', 'styles:compile', 'sprite', 'copy'],
+        ['templates:compile', 'styles:compile', 'js', 'sprite', 'copy'],
         ['watch', 'server']
     )
 });
