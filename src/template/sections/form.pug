@@ -13,8 +13,8 @@ section.form-section
                     Sit down with our experts to receive a free customized marketing plan
 
                 .form__fields
-                    input.form__input(type="text" placeholder="Your Name")
-                    input.form__input(type="text" placeholder="Your Name")
-                    input.form__input(type="text" placeholder="Contact Name")
+                    input.form__input(type="text" placeholder="Your Name" data-valid="required")
+                    input.form__input(type="email" placeholder="Email" data-valid="required" data-email)
+                    input.form__input(type="text" placeholder="Contact Number" data-valid="required" data-number)
 
                 button(type="submit").button.button--text-uppercase.button--red Submit now

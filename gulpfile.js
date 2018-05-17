@@ -53,6 +53,8 @@ gulp.task('styles:compile', function () {
 /* JS */
 gulp.task('js', function() {
     return gulp.src([
+        'src/js/init.js',        
+        'src/js/validation.js',
         'src/js/nav.js',
         'src/js/form.js',
         'src/js/main.js'
